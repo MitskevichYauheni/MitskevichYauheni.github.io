@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
-import List from './icons/list.svg';
-import Loc from './icons/location.svg';
-import Profile from './icons/profile.svg';
-import "./sidebar.scss";
+import React, { Component } from 'react';
+import { Route, Link } from 'react-router-dom';
+import List from './../../base/icons/list.svg';
+import Loc from './../../base/icons/location.svg';
+import Profile from './../../base/icons/profile.svg';
+import './sidebar.scss';
 
 class SideBar extends Component {
   render() {

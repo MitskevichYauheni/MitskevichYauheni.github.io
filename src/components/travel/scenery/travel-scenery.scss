@@ -1,0 +1,35 @@
+@import '../../../base/styles/vars.scss';
+
+.travel-scenery {
+  &__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: rem(18);
+  }
+
+  &__head-left {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__head-title {
+    margin-right: rem(15);
+  }
+
+  &__head-label {
+    color: $purple;
+    font-weight: 600;
+  }
+
+  &__more {
+    border-bottom: 1px solid transparent;
+    color: $grayBlue;
+
+    &:hover,
+    &:active {
+      border-color: $purple;
+      color: $purple;
+    }
+  }
+}

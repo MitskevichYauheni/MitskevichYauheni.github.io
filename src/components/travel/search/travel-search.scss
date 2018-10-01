@@ -1,0 +1,76 @@
+@import '../../../base/styles/vars.scss';
+
+.travel-search {
+  position: relative;
+  width: 100%;
+  margin-bottom: rem(30);
+
+  &__input {
+    width: 100%;
+    height: rem(40);
+    padding: 0 rem(42);
+    border: 0;
+    border-radius: rem(6);
+    background-color: #fff;
+    font-size: rem(14);
+    font-weight: 300;
+    color: $purple;
+    box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.07);
+
+    &::placeholder {
+      color: $grayBlue;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.15);
+
+      & + .travel-search__label {
+        svg {
+          fill: $purple;
+        }
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: rem(22);
+    display: block;
+    width: rem(20);
+    height: rem(20);
+    padding: rem(2);
+    transform: translate(-50%, -50%);
+
+    svg {
+      fill: $grayBlue;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: rem(24);
+    display: inline-flex;
+    width: rem(32);
+    height: rem(32);
+    padding: rem(6);
+    border: 0;
+    bottom: 0;
+    background-color: transparent;
+    transform: translate(50%, -50%);
+
+    svg {
+      fill: $grayBlue;
+    }
+
+    &:hover,
+    &:active {
+      svg {
+        fill: $purple;
+      }
+    }
+  }
+}

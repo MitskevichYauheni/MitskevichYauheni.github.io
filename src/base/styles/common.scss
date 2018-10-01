@@ -1,4 +1,4 @@
-@import "vars";
+@import 'vars';
 
 * {
   padding: 0;
@@ -24,7 +24,7 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #fff;
+  background-color: #fafafb;
 }
 
 a {
@@ -64,6 +64,7 @@ svg {
 
 .page {
   min-height: 100vh;
+  padding-top: rem(28);
   padding-bottom: rem(52);
 }
 
@@ -74,12 +75,14 @@ svg {
 }
 
 .h1 {
-  font-size: rem(28);
+  font-size: rem(24);
   line-height: 1.2;
   color: $black;
 }
+
 .h2 {
-  font-size: rem(24);
+  font-size: rem(20);
+  font-weight: 600;
   line-height: 1.2;
   color: $black;
 }
@@ -91,15 +94,17 @@ svg {
 }
 
 .text {
-  font-size: rem(16);
+  font-size: rem(14);
+  font-weight: 600;
   line-height: 1.4;
   color: $black;
 }
 
 .text-little {
   font-size: rem(12);
+  font-weight: 300;
   line-height: 1.2;
   color: $black;
 }
 
-@import "animate";
+@import 'animate';

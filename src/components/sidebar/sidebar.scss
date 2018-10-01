@@ -1,4 +1,4 @@
-@import "../../base/styles/vars.scss";
+@import '../../base/styles/vars.scss';
 
 .sidebar {
   position: fixed;
@@ -37,14 +37,15 @@
     display: inline-flex;
     width: rem(28);
     height: rem(28);
+    padding: rem(2);
 
     &::after {
       content: '';
       position: absolute;
       top: 50%;
       left: 50%;
-      width: rem(36);
-      height: rem(36);
+      width: rem(32);
+      height: rem(32);
       border-radius: 50%;
       background-color: rgba(0, 0, 0, 0.05);
       transform: translate(-50%, -50%);
@@ -54,6 +55,7 @@
 
     svg {
       fill: $grayBlue;
+      stroke: $grayBlue;
     }
 
     &--active {
@@ -63,12 +65,14 @@
 
       svg {
         fill: $purple;
+        stroke: $purple;
       }
     }
 
     &:hover {
       svg {
         fill: $purple;
+        stroke: $purple;
       }
     }
   }

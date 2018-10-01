@@ -1,11 +1,11 @@
-@import "../../base/styles/vars.scss";
+@import '../../base/styles/vars.scss';
 
 .not-found {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: rem(500);
+  height: rem(320);
 
   svg {
     width: rem(84);

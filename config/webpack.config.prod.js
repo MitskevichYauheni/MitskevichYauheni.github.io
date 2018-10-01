@@ -215,7 +215,11 @@ module.exports = {
           {
              test: /\.scss$/,
              include: paths.appSrc,
-             loaders: [require.resolve('style-loader'), require.resolve('css-loader'), require.resolve('sass-loader')]
+             loaders: [
+               require.resolve('style-loader'),
+               require.resolve('css-loader'),
+               require.resolve('sass-loader')
+             ]
            },
            {
              test: /\.svg$/,
