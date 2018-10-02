@@ -15,7 +15,7 @@
     font-size: rem(14);
     font-weight: 300;
     color: $purple;
-    box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.07);
+    box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.05);
 
     &::placeholder {
       color: $grayBlue;
@@ -24,7 +24,7 @@
     &:hover,
     &:active,
     &:focus {
-      box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.15);
+      box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.1);
 
       & + .travel-search__label {
         svg {

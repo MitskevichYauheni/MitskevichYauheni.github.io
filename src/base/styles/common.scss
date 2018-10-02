@@ -66,6 +66,7 @@ svg {
   min-height: 100vh;
   padding-top: rem(28);
   padding-bottom: rem(52);
+  overflow: hidden;
 }
 
 
@@ -107,4 +108,5 @@ svg {
   color: $black;
 }
 
+@import 'plugins/swiper.scss';
 @import 'animate';

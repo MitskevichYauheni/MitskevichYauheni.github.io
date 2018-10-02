@@ -8,8 +8,8 @@ export default class NotFound extends Component {
     return (
       <div className='not-found'>
         <Eror width={54} height={54}/>
-        <p className='not-found__text text'>Страница не найдена.</p>
-        <p className='not-found__text text'>Вернуться на <Link to='/'>главную</Link>?</p>
+        <p className='not-found__text text'>Page not found.</p>
+        <p className='not-found__text text'>Go back to the <Link to='/'>main page</Link>?</p>
       </div>
     )
   };

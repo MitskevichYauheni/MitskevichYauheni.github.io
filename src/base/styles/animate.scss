@@ -12,32 +12,11 @@
   animation-name: fadeIn;
 }
 
-@keyframes loading {
+@keyframes loadingSearch {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg) translateX(0.375rem) rotate(0deg);
   }
-
-  10% {
-    transform: rotate(-20deg);
-  }
-
-  50% {
-    transform: rotate(36deg);
-  }
-
-  60% {
-    transform: rotate(0deg);
-  }
-
-  90% {
-    transform: rotate(36deg);
-  }
-
   to {
-    transform: rotate(0deg);
+    transform: rotate(360deg) translateX(0.375rem) rotate(-360deg);
   }
-}
-
-.fadeIn {
-  animation-name: fadeIn;
 }
