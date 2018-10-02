@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TravelSearch from './search';
 import TravelScenery from './scenery';
+import TravelCity from './city';
 import './travel.scss';
 
 class Travel extends Component {
@@ -20,6 +21,7 @@ class Travel extends Component {
           <TravelHead name={name} />
           <TravelSearch />
           <TravelScenery />
+          <TravelCity />
         </div>
       </div>
     )

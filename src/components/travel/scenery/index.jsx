@@ -35,7 +35,7 @@ class TravelScenery extends Component {
     .then(response => response.ok ? response.json() : console.error('Error while fetching dates.'))
     .then(result => {
       console.log(result);
-      result && this.setState({data: result});
+      if (result) this.setState({data: result});
     });
   }
   componentWillMount() {
