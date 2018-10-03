@@ -1,0 +1,126 @@
+@import '../../../base/styles/vars.scss';
+
+.travel-scenery {
+  margin-bottom: rem(28);
+
+  &__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: rem(18);
+  }
+
+  &__head-left {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__head-title {
+    margin-right: rem(15);
+  }
+
+  &__head-label {
+    color: $purple;
+    font-weight: 600;
+  }
+
+  &__more {
+    border-bottom: 1px solid transparent;
+    color: $grayBlue;
+
+    &:hover,
+    &:active {
+      border-color: $purple;
+      color: $purple;
+    }
+  }
+
+  &__slider {
+    overflow: visible;
+    // width: calc(100% + 12px);
+    // margin-left: -6px;
+  }
+
+  &__slide {
+    display: block;
+    width: 100%;
+    height: rem(192);
+    border-radius: rem(6);
+    background-color: #fff;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    transition: box-shadow 0.4s ease;
+    overflow: hidden;
+
+    &.swiper-slide-active {
+      box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &__slide-img {
+    width: 100%;
+    height: rem(126);
+    background-color: $purple;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__slide-about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: rem(66);
+    padding: rem(6) rem(14);
+  }
+
+  &__slide-date {
+    margin-bottom: rem(2);
+    color: $grayBlue;
+  }
+
+  &__slide-description {
+    max-width: calc(100% - 4.125rem);
+  }
+
+  &__slide-title {
+    max-width: 100%;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  &__slide-people {
+    padding-left: rem(6);
+  }
+
+  &__treatment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: rem(142);
+    padding: rem(24) rem(32);
+    border-radius: rem(6);
+    background-color: #fff;
+    box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.05);
+
+    svg {
+      width: rem(40);
+      height: rem(40);
+      margin-bottom: rem(18);
+      fill: $purple;
+      animation: loadingSearch 1s linear infinite;
+    }
+  }
+
+  &__treatment-text {
+    width: 100%;
+    text-align: center;
+  }
+}

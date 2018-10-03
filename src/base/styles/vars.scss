@@ -1,0 +1,19 @@
+@function rem($size) {
+  $remsize: $size / 16;
+  @return #{$remsize}rem;
+}
+
+$black: #333;
+$dark-gray: #b3b3b3;
+$gray: #f2f2f2;
+
+$blue: #05377f;
+$blueLight: #1689fc;
+$grayBlue: #b4c2d3;
+
+$purple: #7684fa;
+
+$grean: #6dea0a;
+$black-grean: #008c00;
+
+$red: #cb0000;

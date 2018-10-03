@@ -1,0 +1,9 @@
+@import '../../base/styles/vars.scss';
+
+.travel {
+  width: 100%;
+
+  &__head {
+    margin-bottom: rem(16);
+  }
+}
