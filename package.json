@@ -1,6 +1,6 @@
 {
   "name": "travel-app",
-  "homepage" : "https://mitskevichyauheni.github.io/travel-app/",
+  "homepage": "https://mitskevichyauheni.github.io/travel-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
