@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
 
 import './base/styles/common.scss';
 import Travel from './components/travel';
@@ -12,10 +12,6 @@ const routes = [
   {
     path: '/',
     exact: true,
-    component: Travel
-  },
-  {
-    path: '/travel-app',
     component: Travel
   },
   {
@@ -34,6 +30,8 @@ class App extends Component {
       <Router >
         <div className='page'>
           <Switch >
+            <Redirect from='/travel-app' to='/'/>
+
             {routes.map((route, i) => (
               <Route key={`route-${i}`} path={route.path} exact={route.exact} component={route.component} />
             ))}
