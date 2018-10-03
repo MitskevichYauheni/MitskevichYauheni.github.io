@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Swiper from 'react-id-swiper';
 import { Link } from 'react-router-dom';
+import People from '../../people';
+
 import Search from './../../../base/icons/search.svg';
 import './travel-scenery.scss';
 
@@ -91,9 +93,7 @@ const Slide = ({ image, date, title, href, people }) => (
         <p className='travel-scenery__slide-date text-little'>{date}</p>
         <Link className='travel-scenery__slide-title text' to={href}>{title}</Link>
       </div>
-      <div className='travel-scenery__slide-people'>
-        { people.map((item, i) => <Link className='travel-scenery__slide-people-item' key={`people-${i}`} to={item.href} style={{backgroundImage: `url(${item.avatar})`}} ></Link> )}
-      </div>
+      <People className='travel-scenery__slide-people' max={2} data={people}/>
     </div>
   </div>
 );

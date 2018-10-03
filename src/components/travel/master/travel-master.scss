@@ -1,0 +1,37 @@
+@import '../../../base/styles/vars.scss';
+
+.travel-master {
+  margin-bottom: rem(28);
+
+  &__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: rem(18);
+  }
+
+  &__head-title {
+    margin-right: rem(15);
+  }
+
+  &__items-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(14);
+  }
+
+  &__items {
+    margin-right: rem(16);
+  }
+
+  &__items-title {
+    border-bottom: 1px solid transparent;
+    color: $purple;
+    font-weight: 600;
+
+    &:hover {
+      color: $grayBlue;
+      border-color: $grayBlue;;
+    }
+  }
+}

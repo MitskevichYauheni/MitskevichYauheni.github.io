@@ -8,15 +8,35 @@ import Profile from './components/profile';
 import NotFound from './components/not-found';
 import SideBar from './components/sidebar';
 
+const routes = [
+  {
+    path: '/',
+    exact: true,
+    component: Travel
+  },
+  {
+    path: '/travel-app',
+    component: Travel
+  },
+  {
+    path: '/loc',
+    component: Location
+  },
+  {
+    path: '/profile',
+    component: Profile
+  }
+];
+
 class App extends Component {
   render() {
     return (
       <Router >
         <div className='page'>
           <Switch >
-            <Route exact path='/' component={Travel} />
-            <Route path='/loc' component={Location} />
-            <Route path='/profile' component={Profile} />
+            {routes.map((route, i) => (
+              <Route key={`route-${i}`} path={route.path} exact={route.exact} component={route.component} />
+            ))}
             <Route component={NotFound} />
           </Switch>
           <SideBar />
