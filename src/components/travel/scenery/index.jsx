@@ -3,7 +3,7 @@ import Swiper from 'react-id-swiper';
 import { Link } from 'react-router-dom';
 import People from '../../people';
 
-import Search from './../../../base/icons/search.svg';
+import SearchSvg from './../../../base/icons/search.svg';
 import './travel-scenery.scss';
 
 class TravelScenery extends Component {
@@ -100,7 +100,7 @@ const Slide = ({ image, date, title, href, people }) => (
 
 const SliderTreatment = () => (
   <div className='travel-scenery__treatment'>
-    <Search />
+    <SearchSvg />
     <p className='travel-scenery__treatment-text text'>Request processing in progress.</p>
   </div>
 );
