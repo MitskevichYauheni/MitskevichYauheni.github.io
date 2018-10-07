@@ -1,0 +1,115 @@
+@import '../../../base/styles/vars.scss';
+
+.loc-sight {
+  margin-bottom: rem(30);
+
+  &__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: rem(18);
+  }
+
+  // &__head-title {
+  //   margin-right: rem(15);
+  // }
+
+  &__more {
+    border-bottom: 1px solid transparent;
+    color: $grayBlue;
+
+    &:hover,
+    &:active {
+      border-color: $purple;
+      color: $purple;
+    }
+  }
+
+  &__items {
+    margin-bottom: rem(30);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: rem(14);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__main-img,
+  &__col {
+    width: rem(148);
+    height: rem(162);
+  }
+
+  &__main-img,
+  &__img {
+    position: relative;
+    display: block;
+    border-radius: rem(4);
+    background-color: $purple;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $purple;
+      opacity: 0;
+    }
+
+    &:hover {
+      background-color: $grayBlue;
+
+      &::after {
+        opacity: 0.2;
+      }
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(68);
+    height: rem(68);
+    margin-right: rem(12);
+
+    &:first-of-type {
+      width: 100%;
+      height: rem(79);
+      margin-bottom: rem(12);
+    }
+
+    &:first-of-type,
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    span {
+      color: #fff;
+    }
+
+    &--sum {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

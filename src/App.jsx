@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
 
-import './base/styles/common.scss';
+import './base/styles/core.scss';
 import Travel from './components/travel';
-import Location from './components/location';
+import Loc from './components/loc';
 import Profile from './components/profile';
 import NotFound from './components/not-found';
 import SideBar from './components/sidebar';
@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: '/loc',
-    component: Location
+    component: Loc
   },
   {
     path: '/profile',

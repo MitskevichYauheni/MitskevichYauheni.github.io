@@ -10,7 +10,7 @@ class People extends Component {
           className = this.props.className;
 
     return(
-      <div className={'people' + ((className) && ` ${className}`)}>
+      <div className={'people' + ((className !== undefined) ? ` ${className}` : '')}>
         { data.map((item, i) => (i < max) && <Link className='people__item' key={`people-${i}`} to={item.href} style={{backgroundImage: `url(${item.avatar})`}} ></Link> )}
       </div>
     )

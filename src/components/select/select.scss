@@ -1,0 +1,72 @@
+@import '../../base/styles/vars.scss';
+
+.select {
+  position: relative;
+
+  &__btn {
+    position: relative;
+    padding-right: rem(32);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.4s ease;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: calc(50%);
+      right: rem(6);
+      border: rem(4) solid transparent;
+      border-top: rem(6) solid $grayBlue;
+      transition: 0.4s ease;
+    }
+
+    &:hover {
+      color: $purple;
+
+      &::before {
+        border-top-color: $purple;
+      }
+    }
+  }
+
+  &__list-wrap {
+    position: absolute;
+    top: rem(28);
+    left: 0;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid $grayBlue;
+    background-color: #fff;
+    height: rem(96);
+    overflow: auto;
+  }
+
+  &__list-item {
+    padding: rem(6) rem(6);
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.4s ease;
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  &--open {
+    .select {
+      &__btn {
+        &::before {
+          top: calc(50% - 0.375rem);
+          transform: rotate(-180deg);
+        }
+      }
+
+      &__list-wrap {
+        display: flex;
+      }
+    }
+  }
+}

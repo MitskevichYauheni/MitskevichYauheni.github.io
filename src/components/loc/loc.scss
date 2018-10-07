@@ -1,0 +1,29 @@
+@import '../../base/styles/vars.scss';
+
+.loc {
+  &__not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: rem(172);
+    padding: rem(24) rem(32);
+    border-radius: rem(6);
+    background-color: #fff;
+    box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.05);
+
+    svg {
+      width: rem(40);
+      height: rem(40);
+      margin-bottom: rem(18);
+      fill: $purple;
+      animation: loadingSearch 1s linear infinite;
+    }
+  }
+
+  &__not-found-text {
+    width: 100%;
+    text-align: center;
+  }
+}

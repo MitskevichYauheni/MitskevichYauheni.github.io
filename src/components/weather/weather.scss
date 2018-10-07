@@ -1,0 +1,48 @@
+@import '../../base/styles/vars.scss';
+
+.weather {
+  &__not-found {
+    width: rem(16);
+    height: rem(16);
+
+    svg {
+      fill: $purple;
+      animation: rotage 1s infinite;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    position: relative;
+    min-width: rem(28);
+    width: rem(28);
+    height: rem(24);
+    margin-right: rem(12);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center left;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 32%;
+      top: 66%;
+      width: rem(24);
+      height: rem(24);
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.1);
+      transform: translate(-50%, -50%);
+      filter: blur(6px);
+      z-index: -1;
+    }
+  }
+
+  &__text {
+    color: $dark-gray;
+    font-weight: 300;
+  }
+}

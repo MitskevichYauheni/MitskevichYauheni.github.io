@@ -1,0 +1,48 @@
+@import '../../../base/styles/vars.scss';
+
+.loc-head {
+  margin-bottom: rem(30);
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: rem(24);
+  }
+
+  &__tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__tag {
+    display: flex;
+    align-items: center;
+    height: rem(22);
+    padding: 0 rem(14);
+    border-radius: rem(10);
+    margin-right: rem(8);
+    background-color: $gray2;
+    color: $grayBlue;
+    font-weight: 400;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    svg {
+      width: rem(10);
+      height: rem(10);
+      margin-right: rem(8);
+      fill: currentColor;
+      transition: 0s;
+    }
+
+    &:hover,
+    &:active {
+      background-color: $purple;
+      color: #fff;
+    }
+  }
+}
