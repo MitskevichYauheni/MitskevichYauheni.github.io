@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LocHead from './head';
 import LocPopular from './popular';
+import LocSight from './sight';
 
 import SearchSvg from './../../base/icons/search.svg';
 import './loc.scss';
@@ -39,6 +40,7 @@ class Loc extends Component {
           <div className='loc__content main'>
             { ((data.head) && <LocHead data={data.head}/>) }
             { ((data.popular) && <LocPopular data={data.popular}/>)}
+            { ((data.sight) && <LocSight data={data.sight}/>)}
           </div>
         )}
       </div>

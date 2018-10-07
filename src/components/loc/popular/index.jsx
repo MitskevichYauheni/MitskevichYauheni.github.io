@@ -9,7 +9,7 @@ class LocPopular extends Component {
     super();
     this.state = {
       data: [],
-      baseSize: 0,
+      baseSize: 1,
     }
     this.more = this.more.bind(this);
   }
@@ -24,7 +24,7 @@ class LocPopular extends Component {
           items = [];
 
     data.forEach((item, i) => {
-      if (i <= baseSize) items.push(
+      if (i < baseSize) items.push(
         <Item
           image={item.image}
           name={item.name}
