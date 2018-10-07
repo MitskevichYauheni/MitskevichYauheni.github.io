@@ -25,7 +25,7 @@ class LocSight extends Component {
 
     data.forEach((el, i) => {
       if (i < baseSize) items.push(
-        <Item data={el.items} key={`sight-${i}`} />
+        <Item data={el.items} more={el.more} key={`sight-${i}`} />
       );
     });
 
@@ -42,7 +42,7 @@ class LocSight extends Component {
   }
 };
 
-const Item = ({ data }) => (
+const Item = ({ data, more }) => (
   <div className='loc-sight__item'>
       {(data[0] !== undefined) && <Link
         to={data[0].href}
@@ -56,8 +56,8 @@ const Item = ({ data }) => (
        {(data[2] !== undefined) &&
          (<Link to={data[2].href} className='loc-sight__img' style={{backgroundImage: `url(${data[2].img})`}}></Link>)
        }
-       <Link to={data[2].href} className='loc-sight__img loc-sight__img--sum'>
-         <span className='h2'>{data.length}+</span>
+       <Link to={more.href} className='loc-sight__img loc-sight__img--sum'>
+         <span className='h2'>{more.length}+</span>
        </Link>
       </div>
   </div>
