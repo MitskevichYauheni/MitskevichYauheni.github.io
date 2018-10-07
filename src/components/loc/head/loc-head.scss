@@ -1,6 +1,8 @@
 @import '../../../base/styles/vars.scss';
 
 .loc-head {
+  margin-bottom: rem(30);
+
   &__top {
     display: flex;
     justify-content: space-between;

@@ -39,7 +39,7 @@ a {
   cursor: pointer;
   transition: 0.4s ease;
 
-  div, p, span {
+  div, p {
     transition: 0.4s ease;
   }
 }
@@ -49,7 +49,7 @@ button, input, textarea, select {
   transition: 0.4s ease;
   font-family: 'Open Sans';
 
-  div, p, span {
+  div, p {
     transition: 0.4s ease;
   }
 }
@@ -115,4 +115,5 @@ svg {
 }
 
 @import 'plugins/swiper.scss';
+@import 'plugins/perfect-scrollbar.scss';
 @import 'animate';

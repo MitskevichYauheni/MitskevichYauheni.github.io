@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LocHead from './head';
+import LocPopular from './popular';
 
 import SearchSvg from './../../base/icons/search.svg';
 import './loc.scss';
@@ -33,22 +34,25 @@ class Loc extends Component {
 
     return(
       <div className='loc'>
-        <div className='loc__content main'>
-          {Object.keys(data).length === 0 && <LocNotFound />}
-          {(Object.keys(data).length  !== 0) && (
-            ((data.head) && <LocHead data={data.head}/>)
-          )}
-        </div>
+        {(Object.keys(data).length === 0) && <LocNotFound />}
+        {(Object.keys(data).length !== 0) && (
+          <div className='loc__content main'>
+            { ((data.head) && <LocHead data={data.head}/>) }
+            { ((data.popular) && <LocPopular data={data.popular}/>)}
+          </div>
+        )}
       </div>
     )
   }
 };
 
 const LocNotFound = () => (
-  <div className='loc__not-found'>
-    <SearchSvg />
-    <p className='loc__not-found-text text'>Nothing found.</p>
-    <p className='loc__not-found-text text'>Request is being processed.</p>
+  <div className='loc__content main'>
+    <div className='loc__not-found'>
+      <SearchSvg />
+      <p className='loc__not-found-text text'>Nothing found.</p>
+      <p className='loc__not-found-text text'>Request is being processed.</p>
+    </div>
   </div>
 );
 
