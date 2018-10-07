@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LocHead from './head';
 import LocPopular from './popular';
 import LocSight from './sight';
+import LocSame from './same';
 
 import SearchSvg from './../../base/icons/search.svg';
 import './loc.scss';
@@ -41,6 +42,7 @@ class Loc extends Component {
             { ((data.head) && <LocHead data={data.head}/>) }
             { ((data.popular) && <LocPopular data={data.popular}/>)}
             { ((data.sight) && <LocSight data={data.sight}/>)}
+            { ((data.same) && <LocSame data={data.same}/>)}
           </div>
         )}
       </div>
