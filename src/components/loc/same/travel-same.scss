@@ -19,7 +19,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: $gray2;
-    padding: rem(20) rem(14);
+    padding: rem(18) rem(14);
     border-radius: rem(4);
   }
 
@@ -55,7 +55,7 @@
     }
 
     &:hover {
-      span {
+      &::after {
         border-top-color: $purple;
         border-right-color: $purple;
       }
