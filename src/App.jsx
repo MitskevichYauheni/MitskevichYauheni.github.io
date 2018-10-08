@@ -12,15 +12,15 @@ const routes = [
   {
     path: '/',
     exact: true,
-    component: Travel
+    component: Travel,
   },
   {
     path: '/loc',
-    component: Loc
+    component: Loc,
   },
   {
     path: '/profile',
-    component: Profile
+    component: Profile,
   }
 ];
 

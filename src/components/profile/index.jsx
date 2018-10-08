@@ -6,15 +6,10 @@ import DownloadSvg from './../../base/icons/download.svg';
 import './profile.scss';
 
 class Profile extends Component {
-  constructor(){
-    super();
-    this.state = {
-      data: {},
-      changed: false,
-    }
-    this.changeFileAvatar = this.changeFileAvatar.bind(this);
+  state = {
+    data: {},
   }
-  getData() {
+  getData = () => {
     fetch('http://5bbb9ce8828fb30013ef6fe9.mockapi.io/travel/profile', {
       method: 'get',
       headers: {
@@ -27,7 +22,7 @@ class Profile extends Component {
       if (result) this.setState({data: result[0]});
     });
   }
-  changeFileAvatar(event) {
+  changeFileAvatar = (event) => {
     const file = this.inputAvatar.files[0];
     const reader = new FileReader();
     reader.onloadend = () => {
@@ -52,7 +47,7 @@ class Profile extends Component {
                 <div className='profile__avatar'
                   style={{backgroundImage: `url(${data.avatar})`}}
                   ref={(div) => this.avatar = div}
-                ></div>
+                />
 
                 <label className='profile__avatar-file text-little'>
                   <DownloadSvg />
@@ -68,21 +63,10 @@ class Profile extends Component {
             )}
 
             <div className='profile__description'>
-              {(data.name) && (
-                <ProfileInputWrap title='Name:' value={data.name} placeholder='Enter your name'/>
-              )}
-
-              {(data.email) && (
-                <ProfileInputWrap title='Email:' value={data.email} placeholder='Enter your email'/>
-              )}
-
-              {(data.address) && (
-                <ProfileInputWrap title='Address:' value={data.address} placeholder='Enter your address'/>
-              )}
-
-              {(data.phone) && (
-                <ProfilePhoneWrap title='Phone:' mask='+{375} (00) 000-00-00' value={data.phone} placeholder='Enter your phone' />
-              )}
+              {data.name && <ProfileInputWrap title='Name:' value={data.name} placeholder='Enter your name'/>}
+              {data.email && <ProfileInputWrap title='Email:' value={data.email} placeholder='Enter your email'/>}
+              {data.address && <ProfileInputWrap title='Address:' value={data.address} placeholder='Enter your address'/>}
+              {data.phone && <ProfileInputWrap title='Phone:' mask='+{375} (00) 000-00-00' value={data.phone} placeholder='Enter your phone' />}
             </div>
 
             <button className='profile__btn'>
@@ -95,24 +79,13 @@ class Profile extends Component {
   }
 };
 
-const ProfileInputWrap = ({ title, value, placeholder}) => (
+const ProfileInputWrap = ({ title, mask, value, placeholder }) => (
   <div className='profile__input-wrap'>
     <p className='profile__input-name text-little'>{title}</p>
-    <input className='profile__input'
-      type='text'
-      defaultValue={value}
-      placeholder={placeholder}
-    />
-  </div>
-);
-const ProfilePhoneWrap = ({ title, mask, value, placeholder}) => (
-  <div className='profile__input-wrap'>
-    <p className='profile__input-name text-little'>{title}</p>
-    <IMaskInput className='profile__input'
-      mask={mask}
-      value={value}
-      placeholder={placeholder}
-    />
+    {mask ?
+      <IMaskInput className='profile__input' type='text' mask={mask} value={value} placeholder={placeholder} /> :
+      <input className='profile__input' type='text' defaultValue={value} placeholder={placeholder} />
+    }
   </div>
 );
 

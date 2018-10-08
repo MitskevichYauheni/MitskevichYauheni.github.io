@@ -5,15 +5,11 @@ import { Link } from 'react-router-dom';
 import './loc-popular.scss';
 
 class LocPopular extends Component {
-  constructor(){
-    super();
-    this.state = {
-      data: [],
-      baseSize: 1,
-    }
-    this.more = this.more.bind(this);
+  state = {
+    data: [],
+    baseSize: 1,
   }
-  more(event) {
+  more = (event) => {
     event.preventDefault();
     const i = this.state.baseSize + 1;
     this.setState({baseSize: i});
@@ -43,7 +39,7 @@ class LocPopular extends Component {
         <div className='loc-popular__head'>
           <div className='loc-popular__head-title text'>Popular</div>
 
-          {(baseSize < data.length) && <a className='loc-popular__more text-little' onClick={this.more}>More</a>}
+          {baseSize < data.length && <a className='loc-popular__more text-little' onClick={this.more}>More</a>}
         </div>
         <div className='loc-popular__items'>{items}</div>
       </div>
@@ -67,8 +63,8 @@ const Item = ({ image, name, text, price, distance, detail, nav }) => (
     </div>
 
     <div className='loc-popular__item-links'>
-      { (detail) && <Link to={detail} className='loc-popular__item-link text'><span>Details</span></Link>}
-      { (nav) && <Link to={nav} className='loc-popular__item-link text'><span>Navigation</span></Link>}
+      {detail && <Link to={detail} className='loc-popular__item-link text'><span>Details</span></Link>}
+      {nav && <Link to={nav} className='loc-popular__item-link text'><span>Navigation</span></Link>}
     </div>
   </div>
 );

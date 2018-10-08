@@ -3,11 +3,19 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './people.scss';
 
+const propTypes = {
+  max: PropTypes.number,
+  data: PropTypes.array,
+  className: PropTypes.string,
+}
+
+const defaultProps = {
+  max: 10,
+}
+
 class People extends Component {
   render() {
-    const data = this.props.data,
-          max = this.props.max || 10,
-          className = this.props.className;
+    const { data, className, max } = this.props;
 
     return(
       <div className={'people' + ((className !== undefined) ? ` ${className}` : '')}>
@@ -17,10 +25,7 @@ class People extends Component {
   }
 };
 
-People.propTypes = {
-  max: PropTypes.number,
-  data: PropTypes.array,
-  className: PropTypes.string,
-}
+People.propTypes = propTypes;
+People.defaultProps = defaultProps;
 
 export default People;

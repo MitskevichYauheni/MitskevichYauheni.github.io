@@ -5,12 +5,9 @@ import People from '../../people';
 import './travel-same.scss';
 
 class LocSame extends Component {
-  constructor(){
-    super();
-    this.state = {
-      data: [],
-      maxPeople: 3
-    }
+  state = {
+    data: [],
+    maxPeople: 3
   }
   render() {
     const { social, items, length } = this.props.data;
@@ -25,7 +22,7 @@ class LocSame extends Component {
         <div className='travel-same__content'>
           <p className='travel-same__length text'>{length}</p>
           <div className='travel-same__items-wrap'>
-            {(items.length !== 0) && <People className='travel-same__items' max={maxPeople} data={items} />}
+            {items.length !== 0 && <People className='travel-same__items' max={maxPeople} data={items} />}
             <a href={social} className='travel-same__social text-little' target='_blank'>
               <span></span>
             </a>

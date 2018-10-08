@@ -4,23 +4,24 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 import './select.scss';
 
 class Select extends Component {
-  constructor(){
-    super();
-    this.state = {
-      selectedItem: '',
-    }
-    this.bodyClick = this.bodyClick.bind(this);
-    this.eventOpen = this.eventOpen.bind(this);
-    this.eventChange = this.eventChange.bind(this);
+  state = {
+    selectedItem: this.props.data[0],
   }
-  bodyClick(e) {
+
+  componentDidMount() {
+    document.body.addEventListener('click', this.bodyClick);
+  }
+  componentWillUnmount() {
+    document.body.removeEventListener('click', this.bodyClick);
+  }
+  bodyClick = (e) => {
     const target = e.target || e.srcElement;
 
     if (this.select.classList.contains('select--open') && target !== this.select.querySelector('.select__btn')) {
       this.select.classList.remove('select--open');
     }
   }
-  eventOpen() {
+  eventOpen = () => {
     if (this.select.classList.contains('select--open')) {
       this.select.classList.remove('select--open');
     } else {
@@ -28,23 +29,13 @@ class Select extends Component {
       this._scrollBarRef.updateScroll();
     }
   }
-  eventChange(item) {
+  eventChange = (selectedItem) => {
     this.select.classList.remove('select--open');
-    this.setState({selectedItem: item});
-  }
-  componentWillMount() {
-    this.setState({selectedItem: this.props.data[0]});
-  }
-  componentDidMount() {
-    document.body.addEventListener('click', this.bodyClick);
-  }
-  componentWillUnmount() {
-    document.body.removeEventListener('click', this.bodyClick);
+    this.setState({selectedItem});
   }
   render() {
-    const selectedItem = this.state.selectedItem.text,
-          data = this.props.data,
-          className = this.props.className;
+    const selectedItem = this.state.selectedItem.text;
+    const { data, className } = this.props;
 
     return(
       <div className={'select' + ((className !== undefined) ? ` ${className}` : '')}
