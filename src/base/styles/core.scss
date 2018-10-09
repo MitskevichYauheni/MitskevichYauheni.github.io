@@ -79,12 +79,20 @@ svg {
 .main {
   max-width: rem(306);
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    max-width: rem(602);
+  }
 }
 
 .h1 {
   font-size: rem(24);
   line-height: 1.2;
   color: $black;
+
+  @media (min-width: 768px) {
+    font-size: rem(26);
+  }
 }
 
 .h2 {
@@ -92,12 +100,20 @@ svg {
   font-weight: 600;
   line-height: 1.2;
   color: $black;
+
+  @media (min-width: 768px) {
+    font-size: rem(22);
+  }
 }
 
 .h3 {
   font-size: rem(18);
   line-height: 1.2;
   color: $black;
+
+  @media (min-width: 768px) {
+    font-size: rem(20);
+  }
 }
 
 .text {
@@ -105,6 +121,10 @@ svg {
   font-weight: 600;
   line-height: 1.4;
   color: $black;
+
+  @media (min-width: 768px) {
+    font-size: rem(16);
+  }
 }
 
 .text-little {
@@ -112,6 +132,10 @@ svg {
   font-weight: 300;
   line-height: 1.2;
   color: $black;
+
+  @media (min-width: 768px) {
+    font-size: rem(14);
+  }
 }
 
 @import 'plugins/swiper.scss';

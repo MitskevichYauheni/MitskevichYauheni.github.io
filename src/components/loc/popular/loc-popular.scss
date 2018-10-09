@@ -3,11 +3,19 @@
 .loc-popular {
   margin-bottom: rem(30);
 
+  @media (min-width: 768px) {
+    margin-bottom: rem(32);
+  }
+
   &__head {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     margin-bottom: rem(18);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(20);
+    }
   }
 
   // &__head-title {
@@ -28,6 +36,10 @@
   &__item {
     margin-bottom: rem(14);
 
+    @media (min-width: 768px) {
+      margin-bottom: rem(16);
+    }
+
     &:last-of-type {
       margin-bottom: 0;
     }
@@ -38,10 +50,16 @@
     width: 100%;
     height: rem(100);
     margin-bottom: rem(7);
-    background-color: #fff;
     border-radius: rem(4);
+    background-color: #fff;
     overflow: hidden;
     box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.04);
+
+    @media (min-width: 768px) {
+      height: rem(120);
+      margin-bottom: rem(9);
+      border-radius: rem(6);
+    }
   }
 
   &__item-img {
@@ -52,11 +70,21 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media (min-width: 768px) {
+      min-width: rem(120);
+      width: rem(120);
+    }
   }
 
   &__item-description {
     width: calc(100% - 6.25rem);
     padding: rem(12) rem(10) rem(12) rem(14);
+
+    @media (min-width: 768px) {
+      width: calc(100% - 7.5rem);
+      padding: rem(16) rem(12) rem(12) rem(16);
+    }
   }
 
   &__item-name,
@@ -69,6 +97,10 @@
 
   &__item-name {
     margin-bottom: rem(4);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(5);
+    }
   }
 
   &__item-text {
@@ -79,12 +111,20 @@
     display: flex;
     align-items: baseline;
     margin-top: rem(12);
+
+    @media (min-width: 768px) {
+      margin-top: rem(14);
+    }
   }
 
   &__item-price {
     margin-right: rem(12);
     color: $pink;
     font-weight: 300;
+
+    @media (min-width: 768px) {
+      margin-right: rem(14);
+    }
   }
 
   &__item-distance {
@@ -98,6 +138,11 @@
     border-radius: rem(4);
     overflow: hidden;
     box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.04);
+
+    @media (min-width: 768px) {
+      height: rem(56);
+      border-radius: rem(6);
+    }
   }
 
   &__item-link {
@@ -130,6 +175,14 @@
         border-right: 1px solid $purple;
         margin-left: rem(4);
         transform: rotate(45deg);
+
+        @media (min-width: 768px) {
+          width: rem(10);
+          height: rem(10);
+          border-top-width: 2px;
+          border-right-width: 2px;
+          margin-left: rem(6);
+        }
       }
     }
 
@@ -152,6 +205,10 @@
           border-top-color: #fff;
           border-right-color: #fff;
           transform: rotate(45deg) translate(0.125rem, -0.125rem);
+
+          @media (min-width: 768px) {
+            transform: rotate(45deg) translate(0.25rem, -0.25rem);
+          }
         }
       }
 

@@ -3,11 +3,19 @@
 .travel-scenery {
   margin-bottom: rem(28);
 
+  @media (min-width: 768px) {
+    margin-bottom: rem(30);
+  }
+
   &__head {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     margin-bottom: rem(18);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(20);
+    }
   }
 
   &__head-left {
@@ -51,6 +59,11 @@
     transition: box-shadow 0.4s ease;
     overflow: hidden;
 
+    @media (min-width: 768px) {
+      height: rem(252);
+      border-radius: rem(8);
+    }
+
     &.swiper-slide-active {
       box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.08);
     }
@@ -63,6 +76,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media (min-width: 768px) {
+      height: rem(164);
+    }
   }
 
   &__slide-about {
@@ -71,15 +88,28 @@
     align-items: center;
     height: rem(66);
     padding: rem(6) rem(14);
+
+    @media (min-width: 768px) {
+      height: rem(88);
+      padding: rem(6) rem(16);
+    }
   }
 
   &__slide-date {
     margin-bottom: rem(2);
     color: $grayBlue;
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(2);
+    }
   }
 
   &__slide-description {
     max-width: calc(100% - 4.125rem);
+
+    @media (min-width: 768px) {
+      max-width: calc(100% - 4.875rem);
+    }
   }
 
   &__slide-title {
@@ -96,6 +126,10 @@
 
   &__slide-people {
     padding-left: rem(6);
+
+    @media (min-width: 768px) {
+      padding-left: rem(8);
+    }
   }
 
   &__treatment {
@@ -110,12 +144,22 @@
     background-color: #fff;
     box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.05);
 
+    @media (min-width: 768px) {
+      height: rem(170);
+      padding: rem(24) rem(32);
+    }
+
     svg {
       width: rem(40);
       height: rem(40);
       margin-bottom: rem(18);
       fill: $purple;
       animation: loadingSearch 1s linear infinite;
+
+      @media (min-width: 768px) {
+        width: rem(46);
+        height: rem(46);
+      }
     }
   }
 

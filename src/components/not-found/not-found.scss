@@ -7,10 +7,20 @@
   align-items: center;
   height: rem(320);
 
+  @media (min-width: 768px) {
+    height: rem(480);
+  }
+
   svg {
     width: rem(84);
     height: rem(84);
     margin-bottom: rem(20);
+
+    @media (min-width: 768px) {
+      width: rem(104);
+      height: rem(104);
+      margin-bottom: rem(30);
+    }
   }
 
   &__text {

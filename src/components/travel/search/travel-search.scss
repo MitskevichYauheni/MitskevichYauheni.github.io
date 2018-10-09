@@ -5,6 +5,10 @@
   width: 100%;
   margin-bottom: rem(30);
 
+  @media (min-width: 768px) {
+    margin-bottom: rem(34);
+  }
+
   &__input {
     width: 100%;
     height: rem(40);
@@ -16,6 +20,13 @@
     font-weight: 300;
     color: $purple;
     box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.05);
+
+    @media (min-width: 768px) {
+      height: rem(44);
+      padding: 0 rem(46);
+      border-radius: rem(8);
+      font-size: rem(16);
+    }
 
     &::placeholder {
       color: $grayBlue;
@@ -44,6 +55,13 @@
     padding: rem(2);
     transform: translate(-50%, -50%);
 
+    @media (min-width: 768px) {
+      left: rem(24);
+      width: rem(24);
+      height: rem(24);
+      padding: rem(3);
+    }
+
     svg {
       fill: $grayBlue;
     }
@@ -61,6 +79,13 @@
     bottom: 0;
     background-color: transparent;
     transform: translate(50%, -50%);
+
+    @media (min-width: 768px) {
+      right: rem(26);
+      width: rem(36);
+      height: rem(36);
+      padding: rem(6);
+    }
 
     svg {
       fill: $grayBlue;

@@ -16,6 +16,12 @@
     background-size: cover;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 
+    @media (min-width: 768px) {
+      width: rem(32);
+      height: rem(32);
+      margin-left: rem(6);
+    }
+
     &:first-of-type {
       margin-left: 0;
     }

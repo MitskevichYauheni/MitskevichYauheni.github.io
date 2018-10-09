@@ -1,10 +1,16 @@
 @import '../../base/styles/vars.scss';
 
 .profile {
+  margin-bottom: rem(32);
+
   &__avatar-wrap {
     display: flex;
     align-items: center;
     margin-bottom: rem(24);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(26);
+    }
   }
 
   &__avatar {
@@ -17,6 +23,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media (min-width: 768px) {
+      min-width: rem(84);
+      width: rem(84);
+      height: rem(84);
+      margin-right: rem(24);
+    }
   }
 
   &__avatar-file {
@@ -33,12 +46,24 @@
     transition: 0.4s;
     cursor: pointer;
 
+    @media (min-width: 768px) {
+      width: rem(184);
+      height: rem(40);
+      border-radius: rem(20);
+    }
+
     svg {
       width: rem(10);
       height: rem(12);
       margin-right: rem(8);
       fill: currentColor;
       transition: 0s;
+
+      @media (min-width: 768px) {
+        width: rem(12);
+        height: rem(14);
+        margin-right: rem(10);
+      }
     }
 
     &:hover {
@@ -59,10 +84,16 @@
     margin-bottom: rem(20);
     background-color: #fff;
     box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.04);
+
+    @media (min-width: 768px) {
+      padding: rem(14) rem(16);
+      border-radius: rem(6);
+      margin-bottom: rem(24);
+    }
   }
 
   &__btn {
-    width: rem(100);
+    width: rem(120);
     height: rem(32);
     border-radius: rem(4);
     border: 1px solid $gray2;
@@ -75,6 +106,12 @@
     font-size: rem(12);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 
+    @media (min-width: 768px) {
+      width: rem(140);
+      height: rem(40);
+      border-radius: rem(6);
+    }
+
     &:hover {
       box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.1);
       background-color: $purple;
@@ -84,6 +121,10 @@
 
   &__input-wrap {
     margin-bottom: rem(10);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(12);
+    }
 
     &:last-of-type {
       margin-bottom: 0;
@@ -104,6 +145,12 @@
     background-color: transparent;
     font-size: rem(10);
     color: $black;
+
+    @media (min-width: 768px) {
+      height: rem(40);
+      padding: 0 rem(12);
+      font-size: rem(12);
+    }
 
     &::placeholder {
       color: $grayBlue;
@@ -128,12 +175,24 @@
     background-color: #fff;
     box-shadow: 0 rem(4) rem(16) rem(2) rgba(0, 0, 0, 0.05);
 
+    @media (min-width: 768px) {
+      height: rem(186);
+      padding: rem(26) rem(36);
+      border-radius: rem(8);
+    }
+
     svg {
       width: rem(40);
       height: rem(40);
       margin-bottom: rem(18);
       fill: $purple;
       animation: loadingSearch 1s linear infinite;
+
+      @media (min-width: 768px) {
+        width: rem(44);
+        height: rem(44);
+        margin-bottom: rem(20);
+      }
     }
   }
 
