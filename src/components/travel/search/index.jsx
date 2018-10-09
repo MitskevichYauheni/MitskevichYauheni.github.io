@@ -4,14 +4,10 @@ import ArrowNext from './../../../base/icons/arrow-next.svg';
 import './travel-search.scss';
 
 class TravelSearch extends Component {
-  constructor(){
-    super();
-    this.state = {
-      value: '',
-    }
-    this.changeInput = this.changeInput.bind(this);
+  state = {
+    value: '',
   }
-  changeInput(event, name) {
+  changeInput = (event, name) => {
     const val = event.target.value.trim();
     this.setState({value: val});
   }

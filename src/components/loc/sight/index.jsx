@@ -5,15 +5,11 @@ import { Link } from 'react-router-dom';
 import './loc-sight.scss';
 
 class LocSight extends Component {
-  constructor(){
-    super();
-    this.state = {
-      data: [],
-      baseSize: 1,
-    }
-    this.more = this.more.bind(this);
+  state = {
+    data: [],
+    baseSize: 1,
   }
-  more(event) {
+  more = (event) => {
     event.preventDefault();
     const i = this.state.baseSize + 1;
     this.setState({baseSize: i});

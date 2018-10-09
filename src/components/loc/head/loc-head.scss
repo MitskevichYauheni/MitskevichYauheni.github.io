@@ -27,6 +27,13 @@
     color: $grayBlue;
     font-weight: 400;
 
+    @media (min-width: 768px) {
+      height: rem(24);
+      padding: 0 rem(16);
+      border-radius: rem(12);
+      margin-right: rem(10);
+    }
+
     &:last-of-type {
       margin-right: 0;
     }
@@ -37,6 +44,12 @@
       margin-right: rem(8);
       fill: currentColor;
       transition: 0s;
+
+      @media (min-width: 768px) {
+        width: rem(12);
+        height: rem(12);
+        margin-right: rem(10);
+      }
     }
 
     &:hover,

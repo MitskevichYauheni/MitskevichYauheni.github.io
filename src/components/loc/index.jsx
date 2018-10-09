@@ -8,11 +8,11 @@ import SearchSvg from './../../base/icons/search.svg';
 import './loc.scss';
 
 class Loc extends Component {
-  constructor(){
-    super();
-    this.state = {
-      data: {},
-    }
+  state = {
+    data: {},
+  }
+  componentWillMount() {
+    this.getData();
   }
   getData() {
     fetch('https://5bb29ed877063c0014a7d265.mockapi.io/travel/location', {
@@ -27,22 +27,18 @@ class Loc extends Component {
       if (result) this.setState({data: result[0]});
     });
   }
-  componentWillMount() {
-    this.getData();
-  }
   render() {
     const data = this.state.data;
-    console.log(data);
 
     return(
       <div className='loc'>
         {(Object.keys(data).length === 0) && <LocNotFound />}
         {(Object.keys(data).length !== 0) && (
           <div className='loc__content main'>
-            { ((data.head) && <LocHead data={data.head}/>) }
-            { ((data.popular) && <LocPopular data={data.popular}/>)}
-            { ((data.sight) && <LocSight data={data.sight}/>)}
-            { ((data.same) && <LocSame data={data.same}/>)}
+            {data.head && <LocHead data={data.head} />}
+            {data.popular && <LocPopular data={data.popular} />}
+            {data.sight && <LocSight data={data.sight} />}
+            {data.same && <LocSame data={data.same} />}
           </div>
         )}
       </div>

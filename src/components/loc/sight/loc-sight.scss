@@ -3,11 +3,19 @@
 .loc-sight {
   margin-bottom: rem(30);
 
+  @media (min-width: 768px) {
+    margin-bottom: rem(32);
+  }
+
   &__head {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     margin-bottom: rem(18);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(20);
+    }
   }
 
   // &__head-title {
@@ -27,6 +35,10 @@
 
   &__items {
     margin-bottom: rem(30);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(32);
+    }
   }
 
   &__item {
@@ -35,15 +47,23 @@
     align-items: flex-start;
     margin-bottom: rem(14);
 
+    @media (min-width: 768px) {
+      margin-bottom: rem(16);
+    }
+
     &:last-of-type {
       margin-bottom: 0;
     }
   }
 
-  &__main-img,
-  &__col {
+  &__main-img {
     width: rem(148);
     height: rem(162);
+
+    @media (min-width: 768px) {
+      width: 24%;
+      height: rem(144);
+    }
   }
 
   &__main-img,
@@ -81,6 +101,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    width: rem(148);
+    height: rem(162);
+
+    @media (min-width: 768px) {
+      width: 74%;
+      height: rem(144);
+    }
   }
 
   &__img {
@@ -91,15 +118,28 @@
     height: rem(68);
     margin-right: rem(12);
 
-    &:first-of-type {
-      width: 100%;
-      height: rem(79);
-      margin-bottom: rem(12);
+    @media (min-width: 768px) {
+      width: 31.3%;
+      height: 100%;
+      margin-right: 3.05%;
     }
 
     &:first-of-type,
     &:last-of-type {
       margin-right: 0;
+    }
+
+    &:first-of-type {
+      width: 100%;
+      height: rem(79);
+      margin-bottom: rem(12);
+
+      @media (min-width: 768px) {
+        width: 31.3%;
+        height: 100%;
+        margin-right: 3.05%;
+        margin-bottom: 0;
+      }
     }
 
     span {

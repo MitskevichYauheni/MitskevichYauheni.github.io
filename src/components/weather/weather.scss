@@ -5,6 +5,11 @@
     width: rem(16);
     height: rem(16);
 
+    @media (min-width: 768px) {
+      width: rem(20);
+      height: rem(20);
+    }
+
     svg {
       fill: $purple;
       animation: rotage 1s infinite;
@@ -26,6 +31,13 @@
     background-size: contain;
     background-position: center left;
 
+    @media (min-width: 768px) {
+      min-width: rem(30);
+      width: rem(30);
+      height: rem(26);
+      margin-right: rem(14);
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -38,6 +50,11 @@
       transform: translate(-50%, -50%);
       filter: blur(6px);
       z-index: -1;
+
+      @media (min-width: 768px) {
+        width: rem(26);
+        height: rem(26);
+      }
     }
   }
 

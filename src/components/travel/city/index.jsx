@@ -4,22 +4,20 @@ import { Link } from 'react-router-dom';
 import './travel-city.scss';
 
 class TravelCity extends Component {
-  constructor(){
-    super();
-    this.state = {
-      data: [],
-      baseSize: 3,
-      hot: true,
-    }
-    this.more = this.more.bind(this);
-    this.getData = this.getData.bind(this);
+  state = {
+    data: [],
+    baseSize: 3,
+    hot: true,
   }
-  more(event) {
+  componentWillMount() {
+    this.getData();
+  }
+  more = (event) => {
     event.preventDefault();
     const i = this.state.baseSize + 3;
     this.setState({baseSize: i});
   }
-  getData() {
+  getData = () => {
     fetch('https://5bb29ed877063c0014a7d265.mockapi.io/travel/city', {
       method: 'get',
       headers: {
@@ -31,9 +29,6 @@ class TravelCity extends Component {
       console.log(result);
       if (result) this.setState({data: result});
     });
-  }
-  componentWillMount() {
-    this.getData();
   }
   render() {
     const data = this.state.data,

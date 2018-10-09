@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 import RefreshSvg from './../../base/icons/refresh.svg';
 import './weather.scss';
 
+const propTypes = {
+  city: PropTypes.string,
+  className: PropTypes.string,
+}
+
 class Weather extends Component {
-  constructor(){
-    super();
-    this.state = {
-      data: {},
-    }
-    this.getData = this.getData.bind(this);
+  state = {
+    data: {},
   }
   getData() {
     fetch(`https://5bb29ed877063c0014a7d265.mockapi.io/travel/weather?city=${this.props.city}`, {
@@ -34,8 +35,10 @@ class Weather extends Component {
 
     return(
       <div className={'weather' + ((className !== undefined) ? ` ${className}` : '')}>
-        { Object.keys(data).length === 0 && <WeatherNotFound /> }
-        { Object.keys(data).length !== 0 && <WeatherItem img={data.img} t={data.t} /> }
+        { Object.keys(data).length === 0 ?
+          <WeatherNotFound /> :
+          <WeatherItem img={data.img} t={data.t} />
+        }
       </div>
     )
   }
@@ -56,7 +59,4 @@ const WeatherNotFound = () => (
 
 export default Weather;
 
-Weather.propTypes = {
-  city: PropTypes.string,
-  className: PropTypes.string,
-}
+Weather.propTypes = propTypes;

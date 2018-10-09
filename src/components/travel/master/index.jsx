@@ -4,15 +4,14 @@ import People from '../../people';
 import './travel-master.scss';
 
 class TravelMaster extends Component {
-  constructor(){
-    super();
-    this.state = {
-      data: [],
-      maxPeople: 4
-    }
-    this.getData = this.getData.bind(this);
+  state = {
+    data: [],
+    maxPeople: 4
   }
-  getData() {
+  componentWillMount() {
+    this.getData();
+  }
+  getData = () => {
     fetch('https://5bb29ed877063c0014a7d265.mockapi.io/travel/people', {
       method: 'get',
       headers: {
@@ -24,9 +23,6 @@ class TravelMaster extends Component {
       console.log(result);
       if (result) this.setState({data: result});
     });
-  }
-  componentWillMount() {
-    this.getData();
   }
   render() {
     const data = this.state.data,

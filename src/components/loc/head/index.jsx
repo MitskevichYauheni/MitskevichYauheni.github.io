@@ -14,12 +14,12 @@ class LocHead extends Component {
     return(
       <div className='loc-head'>
         <div className='loc-head__top'>
-          {((select !== undefined) && <Select className='loc-head__select' data={select} />)}
-          {((select === undefined) && <div className='loc-head__title h2'>I am in {city}.</div>)}
+          {select !== undefined && <Select className='loc-head__select' data={select} />}
+          {select === undefined && <div className='loc-head__title h2'>I am in {city}.</div>}
           <Weather className='loc-head__weather' city={city} />
 
         </div>
-        {((tags !== undefined) && <Tags data={tags} />)}
+        {tags !== undefined && <Tags data={tags} />}
       </div>
     )
   }

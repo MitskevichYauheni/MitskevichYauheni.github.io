@@ -3,15 +3,27 @@
 .travel-same {
   margin-bottom: rem(28);
 
+  @media (min-width: 768px) {
+    margin-bottom: rem(30);
+  }
+
   &__head {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     margin-bottom: rem(18);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(20);
+    }
   }
 
   &__head-title {
     margin-right: rem(15);
+
+    @media (min-width: 768px) {
+      margin-right: rem(17);
+    }
   }
 
   &__content {
@@ -19,12 +31,21 @@
     justify-content: space-between;
     align-items: center;
     background-color: $gray2;
-    padding: rem(20) rem(14);
+    padding: rem(18) rem(14);
     border-radius: rem(4);
+
+    @media (min-width: 768px) {
+      padding: rem(20) rem(16);
+      border-radius: rem(6);
+    }
   }
 
   &__items {
     margin-right: rem(14);
+
+    @media (min-width: 768px) {
+      margin-right: rem(16);
+    }
   }
 
   &__length {
@@ -43,19 +64,30 @@
     width: rem(16);
     height: rem(16);
 
+    @media (min-width: 768px) {
+      width: rem(18);
+      height: rem(18);
+    }
+
     &::after {
       content: '';
       display: inline-block;
       width: rem(8);
       height: rem(8);
-      border-top: 1px solid $grayBlue;
-      border-right: 1px solid $grayBlue;
+      border-top: 2px solid $grayBlue;
+      border-right: 2px solid $grayBlue;
       margin-left: rem(4);
       transform: rotate(45deg);
+
+      @media (min-width: 768px) {
+        width: rem(10);
+        height: rem(10);
+        margin-left: rem(6);
+      }
     }
 
     &:hover {
-      span {
+      &::after {
         border-top-color: $purple;
         border-right-color: $purple;
       }

@@ -7,10 +7,13 @@
     position: relative;
     padding-right: rem(32);
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
     transition: 0.4s ease;
     cursor: pointer;
+
+    @media (min-width: 768px) {
+      padding-right: rem(46);
+    }
 
     &::before {
       content: '';
@@ -42,6 +45,11 @@
     background-color: #fff;
     height: rem(96);
     overflow: auto;
+
+    @media (min-width: 768px) {
+      top: rem(30);
+      height: rem(104);
+    }
   }
 
   &__list-item {

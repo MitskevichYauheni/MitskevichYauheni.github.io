@@ -3,25 +3,45 @@
 .travel-master {
   margin-bottom: rem(28);
 
+  @media (min-width: 768px) {
+    margin-bottom: rem(30);
+  }
+
   &__head {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     margin-bottom: rem(18);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(20);
+    }
   }
 
   &__head-title {
     margin-right: rem(15);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(17);
+    }
   }
 
   &__items-wrap {
     display: flex;
     align-items: center;
     margin-bottom: rem(14);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(10);
+    }
   }
 
   &__items {
     margin-right: rem(16);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(18);
+    }
   }
 
   &__items-title {

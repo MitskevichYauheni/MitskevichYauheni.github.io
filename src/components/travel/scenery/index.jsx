@@ -7,18 +7,15 @@ import SearchSvg from './../../../base/icons/search.svg';
 import './travel-scenery.scss';
 
 class TravelScenery extends Component {
-  constructor(){
-    super();
-    this.state = {
-      data: [],
-      baseSize: 4,
-      updated: true
-    }
-    this.more = this.more.bind(this);
-    this.getData = this.getData.bind(this);
-    this.swiper = null;
+  state = {
+    data: [],
+    baseSize: 4,
+    updated: true
   }
-  more(event) {
+  componentWillMount() {
+    this.getData();
+  }
+  more = (event) => {
     event.preventDefault();
     const i = this.state.baseSize + 2;
     this.setState({baseSize: i});
@@ -27,7 +24,7 @@ class TravelScenery extends Component {
       if (this.swiper) this.swiper.update();
     }, 10);
   }
-  getData() {
+  getData = () => {
     fetch('https://5bb29ed877063c0014a7d265.mockapi.io/travel/scenery', {
       method: 'get',
       headers: {
@@ -40,9 +37,7 @@ class TravelScenery extends Component {
       if (result) this.setState({data: result});
     });
   }
-  componentWillMount() {
-    this.getData();
-  }
+
   render() {
     const data = this.state.data,
           baseSize = this.state.baseSize,
@@ -72,13 +67,12 @@ class TravelScenery extends Component {
           {(baseSize < data.length) && <a className='travel-scenery__more text-little' onClick={this.more}>More</a>}
         </div>
 
-        {(data.length === 0) && <SliderTreatment />}
-
-        {(data.length !== 0) && (
-          <Swiper {...params} ref={(node) => { if(node) this.swiper = node.swiper }}>
+        {data.length === 0 ?
+          <SliderTreatment /> :
+          <Swiper {...params} ref={(node) => { if (node) this.swiper = node.swiper }}>
             {slides}
           </Swiper>
-        )}
+        }
       </div>
     )
   }
